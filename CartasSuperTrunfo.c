@@ -5,8 +5,7 @@ int main(){
  char estado1[20], codigo1[20], cidade1[20],estado2[20], codigo2[20], cidade2[20];
  int populacao1, turismo1, populacao2, turismo2;
  float area1, pib1, area2, pib2;
- 
- 
+ float densidade1, percapita1, densidade2, percapita2;
  
  /*
 
@@ -17,9 +16,12 @@ int main(){
  "turismo": quantidade de pontos túristicos da cidade
  "area": área da cidade em quilômetros quadrados
  "pib": produto interno bruto da cidade
+ "densidade": Densidade Populacional da cidade
+ "percapita": Pib per capita da cidade
  
  O número no final de cada nome significativo é referente ao número da carta
  */
+
 
  printf("Carta 1\n");
 
@@ -72,6 +74,17 @@ int main(){
  // Os códigos acima servem para a leitura dos dados da segunda carta
 
 
+ densidade1 = (float) populacao1 / area1;
+ densidade2 = (float) populacao2 / area2;
+ percapita1 =  (float) pib1/ populacao1;
+ percapita2 =  (float) pib2 / populacao2;
+
+ /*
+ códigos acima para a realização das operações matemáticas
+ com o objetivo de dar o resultado da Densidade Populacional e o Pib per Capita
+ */
+
+
 printf("\n");
 
  printf("Carta 1\n");
@@ -82,6 +95,8 @@ printf("\n");
  printf("Número de pontos turísticos:%d\n",turismo1);
  printf("Área:%.2f km²\n",area1);
  printf("PIB:%.2f bilhões de reais\n",pib1);
+ printf("Densidade Populacional:%.2f hab/km²\n", densidade1);
+ printf("PIB per capita:%.2f reais\n", percapita1);
 
  printf("\n");
 
@@ -91,11 +106,16 @@ printf("\n");
  printf("Cidade:%s\n",cidade2);
  printf("População:%d\n",populacao2);
  printf("Número de pontos turísticos:%d\n",turismo2);
- printf("Área:%f km²\n",area2);
- printf("PIB:%f bilhões de reais\n",pib2);
+ printf("Área:%.2f km²\n",area2);
+ printf("PIB:%.2f bilhões de reais\n",pib2);
+ printf("Densidade Populacional:%.2f hab/km²\n", densidade2);
+ printf("PIB per capita:%.2f reais\n", percapita2);
 
- // Os códigos acima servem para exibir na tela as informações, sobre a primeira e a segunda carta, fornecidas pelo usuário
-
+ /*
+ Os códigos acima servem para exibir na tela as informações,
+  sobre a primeira e a segunda carta, fornecidas pelo usuário.
+  Informa também o resultado do cálculo referente a Densidade Populacional e o Pib per capita
+ */
  printf("\n");
 
  
