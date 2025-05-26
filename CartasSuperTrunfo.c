@@ -1,6 +1,6 @@
-#include <stdio.h>
+ #include <stdio.h>
 
-int main(){
+ int main(){
 
  char estado1[20], codigo1[20], cidade1[20],estado2[20], codigo2[20], cidade2[20];
  unsigned long int populacao1, populacao2; 
@@ -75,20 +75,18 @@ int main(){
  // Os códigos acima servem para a leitura dos dados da segunda carta
 
 
+
  densidade1 = (float) populacao1 / area1;
  densidade2 = (float) populacao2 / area2;
  percapita1 =  (float) pib1/ populacao1;
  percapita2 =  (float) pib2 / populacao2;
- superpoder1 = (float) populacao1 + turismo1 + area1 + pib1 + (1 / densidade1) + percapita1;
- superpoder2 = (float) populacao2 + turismo2 + area2 + pib2 + (1 / densidade2) + percapita2;
  
  /*
  códigos acima para a realização das operações matemáticas
- com o objetivo de dar o resultado da Densidade Populacional, Pib per Capita E Super poder
+ com o objetivo de dar o resultado da Densidade Populacional e Pib per Capita
  */
 
-
-printf("\n");
+ printf("\n");
 
  printf("Carta 1\n");
  printf("Estado:%s\n",estado1);
@@ -100,8 +98,7 @@ printf("\n");
  printf("PIB:%.2f bilhões de reais\n",pib1);
  printf("Densidade Populacional:%.2f hab/km²\n", densidade1);
  printf("PIB per capita:%.2f reais\n", percapita1);
- printf("Super poder:%.2f\n", superpoder1);
-
+ 
  printf("\n");
 
  printf("Carta 2\n");
@@ -114,32 +111,33 @@ printf("\n");
  printf("PIB:%.2f bilhões de reais\n",pib2);
  printf("Densidade Populacional:%.2f hab/km²\n", densidade2);
  printf("PIB per capita:%.2f reais\n", percapita2);
- printf("Super poder:%.2f\n", superpoder2);
+ 
 
  /*
  Os códigos acima servem para exibir na tela as informações,
   sobre a primeira e a segunda carta, fornecidas pelo usuário.
-  Informa também o resultado do cálculo referente a Densidade Populacional, o Pib per capita e o Super Poder.
+  Informa também o resultado do cálculo referente a Densidade Populacional e o Pib per capita.
  */
 
  printf("\n");
 
- printf("Comparação entre Carta 1 e Carta 2\n");
- printf("1: vitória da Carta 1  0: vitória da Carta 2\n");
+ printf("Comparação entre Carta 1 e Carta 2 (Atributo: PIB)\n");
+    
+    printf("\n");
+ 
+ printf("PIB Carta 1: %.2f\n", pib1);
+ printf("PIB Carta 2: %.2f\n", pib2);
 
-printf("\n");
-
-printf("População:%d\n",populacao1>populacao2);
- printf("Número de pontos turísticos:%d\n",turismo1 > turismo2);
- printf("Área:%d\n",area1 > area2);
- printf("PIB:%d\n",pib1 > pib2);
- printf("Densidade Populacional:%d hab/km²\n", densidade1 < densidade2);
- printf("PIB per capita:%d \n", percapita1 > percapita2);
- printf("Super poder:%d\n", superpoder1 > superpoder2);
+ if(pib1 > pib2){
+    printf("Carta 1 venceu\n"); // Resultado se a condição do if for verdadeira
+ } else {
+    printf("Carta 2 venceu\n"); // Resultado se a condição do if for falsa
+ }
+ 
 
  printf("\n");
 
  
-return 0;
+ return 0;
     
 }
